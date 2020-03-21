@@ -10,7 +10,7 @@ before_action :set_article , only: [:edit, :update, :show, :destroy]
   def create
     @article = Article.new(article_params)
     if @article.save
-      flash[:notice] = "Article was seccessfully created"
+      flash[:success] = "Article was seccessfully created"
       redirect_to article_path(@article)
     else
       render :new
@@ -28,7 +28,7 @@ before_action :set_article , only: [:edit, :update, :show, :destroy]
   def update
  
     if @article.update(article_params)
-      flash[:notice] = "Article was seccessfully updated "
+      flash[:success] = "Article was seccessfully updated "
       redirect_to article_path(@article)
     else
       render :new
@@ -38,7 +38,7 @@ before_action :set_article , only: [:edit, :update, :show, :destroy]
   def destroy
     
     @article.destroy
-    flash[:notice]= "Deleted successfully"
+    flash[:danger]= "Deleted successfully"
     redirect_to articles_path
   end
 
