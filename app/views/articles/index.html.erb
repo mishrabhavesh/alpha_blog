@@ -1,18 +1,30 @@
 <h1>Listing all articles </h1>
 <P><%= link_to 'Create new article', new_article_path %> </P>
-<table>
-        <tr>
-            <th>Title:</th>
-            <th>Description:</th>
-        </tr>
-    
-        <% @article.each do |f| %>
-        <tr>
-        <td><%= f.title %></td>
-        <td><%= f.description %></td>
-        <td><%= link_to 'Edit', edit_article_path(f) %></td>
-        <td><%= link_to 'Show', article_path(f) %></td>
-        <td><%= link_to 'Delete', article_path(f), method: :delete , data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-        <% end %>
-</table>
+
+<div class=" bg-info">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                        <% @article.each do |f| %>
+                 <div class="card article my-4">
+                    <div class="card-header">
+                    <h2><strong class="text-primary"> <%= f.title %> </strong> </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">
+                        <h3> <%= f.description %> </h3> 
+                        </div>
+                        <div class="card-footer">
+                            <div class="buttons mt-3">
+                                <%=link_to 'Edit this article',edit_article_path(f), class: "btn btn-primary mr-4 btn-outline-light"  %>
+                                <%= link_to 'Delete', article_path(f), method: :delete , data: { confirm: 'Are you sure?' } ,class: "btn btn-danger btn-outline-light mr-4" %>
+                                <%= link_to 'Show', article_path(f), class: "btn btn-success btn-outline-light" %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
