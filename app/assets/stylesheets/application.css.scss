@@ -1,0 +1,25 @@
+@import "bootstrap/scss/bootstrap";
+
+.nav-link {
+    color: white;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.image {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+
+}
+
+.signup-button {
+    background-color: black
+}
+
+.footer h3 {
+    font-size: 16px;
+}
