@@ -1,12 +1,20 @@
-<h1>Showing selected artice</h1>
-<p>
-Title: <%= @article.title %>
-</p>
-<p>
-
-Description: <%= @article.description %>
-</p>
-
-<%=link_to 'Edit',edit_article_path(@article)  %>
-<%= link_to 'back to articles listing', articles_path %>
-<%= link_to 'Edit', edit_article_path %>
+<div class="bg-info text-white">
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="h2 text-center"><strong>Title :</strong>  <%= @article.title %></div>
+            <div class= "card-body">
+               <div class="h4 py-3 text-center"><strong> Description :</strong></div>
+                <div class="card-footer py-3">
+                    <%= @article.description %>
+                </div>
+                 <div class="buttons mt-3">
+                        <%=link_to 'Edit this article',edit_article_path(@article), class: "btn btn-primary mr-4 btn-outline-light"  %>
+                        <%= link_to 'Delete this article', article_path,method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger btn-outline-light mr-4" %>
+                        <%= link_to 'View all articles', articles_path, class: "btn btn-success btn-outline-light" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
