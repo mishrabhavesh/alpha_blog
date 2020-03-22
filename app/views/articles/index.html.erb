@@ -15,6 +15,10 @@
                     <div class="card-body">
                         <div class="card-title text-dark">
                         <h3> <%= f.description %> </h3> 
+                        <small class=" card-footer my-0">Created by:  <%= f.user.user %>
+                               Created at:  <%= time_ago_in_words(f.created_at) %>
+                               Updated at: <%= time_ago_in_words(f.updated_at) %> </small>
+                                 
                         </div>
                         <div class="card-footer">
                             <div class="buttons mt-1">
