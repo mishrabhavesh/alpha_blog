@@ -1,0 +1,18 @@
+<h3 align="center">All Alpha Blog</h3>
+<div class="bg-info">
+    <div class="container">
+        <% @user.each do |user| %>
+        <div class="row">
+            <div class="col m-3">
+                <div class="card">
+                    <div class="card-body text-center nounderline navbar-nav">
+                        <li class=" py-3"> <%= link_to gravatar_for(user),user_path(user) %> </li>
+                        <li class=" pb-3"> <%= link_to user.user, user_path(user) , class: "btn btn-primary btn-outline-light btn-lg" %> </li>
+                        <li class="card-footer h4"><small> <%= link_to pluralize(user.articles.count,"article",) if user.articles %> </small></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%end%>
+    </div>
+</div>
