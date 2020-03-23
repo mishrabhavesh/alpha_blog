@@ -1,6 +1,10 @@
 <div class="jubmbotron card image text-center p-4">
 <div class="card-body my-auto ">
     <h3 class="display-4 card-title py-4 text-light">Welcome to <strong class="text-primary"> Alpha Blog</strong> </h3>
+    <% if !logged_in? %>
     <%= link_to 'Sign Up Now', signup_path , class:'btn btn-outline-light btn-light signup-button  btn-lg' %>
+    <% else %>
+    <div > <%= link_to 'Create Your own blog', new_article_path , class: "display-4 btn btn-success btn-outline-dark" %> </div>
+    <%end%>
     </div>
 </div>

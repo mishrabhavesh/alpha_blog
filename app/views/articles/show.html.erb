@@ -9,8 +9,11 @@
                     <%= @article.description %>
                 </div>
                  <div class="buttons mt-3">
+                  <% if logged_in? && current_user == @article.user%>
                         <%=link_to 'Edit this article',edit_article_path(@article), class: "btn btn-primary mr-4 btn-outline-light"  %>
                         <%= link_to 'Delete this article', article_path,method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-danger btn-outline-light mr-4" %>
+                     <% end%>
+
                         <%= link_to 'View all articles', articles_path, class: "btn btn-success btn-outline-light" %>
                 </div>
             </div>
